@@ -1,4 +1,3 @@
-
 # PlanIA Edu 🎓🤖
 
 **PlanIA Edu** es un asistente inteligente desarrollado con [Streamlit](https://streamlit.io) que permite a docentes generar planificaciones pedagógicas automatizadas mediante herramientas de inteligencia artificial. Está diseñado para ser útil por docentes de cualquier nivel educativo.
@@ -19,47 +18,27 @@
 ### 1. Clona este repositorio
 
 ```bash
-git clone https://github.com/malmeidap/plania-edu.git
-cd plania-edu
-```
+git clone https://github.com/malmeidap/plania-edu-cloud.git
+cd plania-edu-cloud
 
-### 2. Instala los requisitos
-
-Se recomienda usar un entorno virtual (opcional):
-
-```bash
 python -m venv venv
-source venv/bin/activate  # En Windows: venv\Scripts\activate
+venv\Scripts\activate
 pip install -r requirements.txt
+
+streamlit run planiaedu_cloud.py
 ```
-
-### 3. Ejecuta la aplicación
-
-```bash
-streamlit run planiaedu.py
-```
-
----
-
-## ☁️ Despliegue en Streamlit Cloud
-
-1. Sube este repositorio a tu cuenta de GitHub.
-2. Ve a [https://streamlit.io/cloud](https://streamlit.io/cloud) y haz login con GitHub.
-3. Selecciona el repositorio `plania-edu`.
-4. Configura el archivo principal como: `planiaedu.py`.
-5. ¡Tu aplicación estará disponible con una URL pública!
 
 ---
 
 ## 📁 Estructura del proyecto
 
 ```
-plania-edu/
+plania-edu-cloud/
 │
 ├── assets/
 │   └── logo.png
 ├── historial_planificaciones.json
-├── planiaedu.py
+├── planiaedu_cloud.py
 ├── requirements.txt
 ├── README.md
 └── .streamlit/
@@ -71,7 +50,7 @@ plania-edu/
 ## 🧾 Requisitos
 
 - Python 3.8 o superior
-- Librerías:
+- Librerías necesarias:
   - `streamlit`
   - `openai`
   - `reportlab`
