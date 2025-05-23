@@ -249,7 +249,7 @@ def generar_pdf(respuestas):
     # Construir PDF
     
     story.append(Spacer(1, 0.3 * inch))
-    story.append(Paragraph("<font size='10'>---<br/>Este documento fue generado automáticamente por la herramienta<br/><strong>📘 PlanIA Edu - Asistente Pedagógico con IA</strong><br/>Desarrollado por Marco Almeida – 2025</font>", styles['Normal']))
+    story.append(Paragraph("<font size='10'>---<br/>Este documento fue generado automáticamente por la herramienta<br/><strong>📘 PlanIA Edu - Asistente Pedagógico con IA</strong><br/>Desarrollado por Marco Almeida Pacheco – 2025</font>", styles['Normal']))
 
     doc.build(story)
     pdf = buffer.getvalue()
