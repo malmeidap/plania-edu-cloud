@@ -1,6 +1,29 @@
 import streamlit as st
 import openai
 openai.api_key = st.secrets["OPENAI_API_KEY"]
+# Verificación temprana de API Key
+if not openai.api_key or not openai.api_key.startswith("sk-"):
+    st.error("🔐 Error: No se ha configurado correctamente la clave de OpenAI. Por favor, revisa la sección de 'Secrets' en Streamlit Cloud.")
+    st.stop()
+
+# Función auxiliar para manejar llamadas seguras a OpenAI
+def consulta_openai(prompt):
+    try:
+        respuesta = openai.ChatCompletion.create(
+            model="gpt-3.5-turbo",
+            messages=[{"role": "user", "content": prompt}],
+            temperature=0.7,
+            max_tokens=1000
+        )
+        return respuesta.choices[0].message.content.strip()
+    except openai.error.AuthenticationError:
+        return "⚠️ Error de autenticación con OpenAI. Verifica tu clave API."
+    except openai.error.RateLimitError:
+        return "⚠️ Se ha superado el límite de uso de la API. Intenta más tarde."
+    except openai.error.OpenAIError as e:
+        return f"⚠️ Error al conectar con OpenAI: {str(e)}"
+    except Exception as e:
+        return f"⚠️ Error inesperado: {str(e)}"
 from datetime import datetime
 from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import letter
