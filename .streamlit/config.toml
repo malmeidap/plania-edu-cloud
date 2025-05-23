@@ -1,13 +1,21 @@
 [theme]
-primaryColor="#0E76A8"
-backgroundColor="#FFFFFF"
-secondaryBackgroundColor="#F0F2F6"
-textColor="#262730"
-font="sans serif"
+base = "light"
 
 [server]
 headless = true
-enableCORS = false
+
+[client]
+showSidebarNavigation = false
+
+[layout]
+default = "centered"
+
+[browser]
+gatherUsageStats = false
+
+[global]
+pageTitle = "PlanIA Edu – Asistente Pedagógico con IA"
+favicon = "assets/logo.png"
 
 
 
