@@ -1,0 +1,30 @@
+
+---
+name: Reportar un error o sugerencia
+about: Describe un problema o mejora que has encontrado o deseas proponer
+title: "[Error/Sugerencia]: Título breve del problema"
+labels: bug, enhancement
+assignees: ''
+
+---
+
+**Describe el problema**
+Explica claramente qué ocurre.
+
+**Pasos para reproducirlo**
+1. Ir a '...'
+2. Hacer clic en '...'
+3. Ver el error
+
+**Comportamiento esperado**
+Explica qué debería ocurrir en lugar del error.
+
+**Capturas de pantalla**
+(Si es necesario)
+
+**Entorno**
+ - SO: [e.g. Windows 11]
+ - Navegador: [e.g. Chrome 124]
+
+**Comentarios adicionales**
+Cualquier otro dato que consideres útil.

@@ -1,0 +1,16 @@
+# Entornos virtuales
+venv/
+.env
+.secrets.toml
+.secrets/
+__pycache__/
+*.py[cod]
+*.log
+
+# Archivos específicos del sistema
+.DS_Store
+Thumbs.db
+
+# Archivos ocultos o temporales
+*.swp
+*~
