@@ -288,7 +288,7 @@ elif step_index == 1:
     st.markdown("🎓 ¿Cuál es la asignatura que imparte?")
     user_input = st.text_input("Asignatura")
     if st.button("Siguiente"):
-        st.session_state.respuestas["asignatura"] = user_input
+    st.session_state.respuestas["asignatura"] = user_input
         send_message("user", user_input)
         send_message("bot", "¿Sobre qué tema específico trabajará esta clase?")
         st.session_state.step = "tema"
@@ -324,15 +324,16 @@ elif step_index == 4:
         "Ciencias Sociales", "Artes y Humanidades", "Otro"
     ])
     if st.button("Siguiente"):
-        st.session_state.respuestas["area_conocimiento"] = user_input
-        send_message("user", user_input)
-        send_message("bot", "¿Cuál es el nivel académico? (Técnico / Pregrado / Posgrado)")
-	st.markdown("📘 **Guía:** Selecciona el nivel educativo al que está dirigida esta clase:")
-	st.markdown("- **Técnico**: Programas de formación técnica profesional o tecnológica.")
-	st.markdown("- **Pregrado**: Carreras universitarias como licenciaturas e ingenierías.")
-	st.markdown("- **Posgrado**: Maestrías, especializaciones y doctorados.")
-	st.session_state.step = "nivel_academico"
-        st.rerun()
+    st.session_state.respuestas["area_conocimiento"] = user_input
+    send_message("user", user_input)
+    send_message("bot", "¿Cuál es el nivel académico? (Técnico / Pregrado / Posgrado)")
+    st.markdown("📘 **Guía:** Selecciona el nivel educativo al que está dirigida esta clase:")
+    st.markdown("- **Técnico**: Programas de formación técnica profesional o tecnológica.")
+    st.markdown("- **Pregrado**: Carreras universitarias como licenciaturas e ingenierías.")
+    st.markdown("- **Posgrado**: Maestrías, especializaciones y doctorados.")
+    st.session_state.step = "nivel_academico"
+    st.rerun()
+
 
 # Paso 5: Nivel académico
 elif step_index == 5:
