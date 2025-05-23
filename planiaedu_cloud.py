@@ -97,16 +97,6 @@ if "introduccion_completa" not in st.session_state:
 # API Key – En producción usa variables de entorno
 
 
-HISTORIAL_PATH = "historial_planificaciones.json"
-
-def cargar_historial():
-    if os.path.exists(HISTORIAL_PATH):
-        with open(HISTORIAL_PATH, "r", encoding="utf-8") as f:
-            return json.load(f)
-    else:
-        return []
-
-def guardar_historial(historial):
     with open(HISTORIAL_PATH, "w", encoding="utf-8") as f:
         json.dump(historial, f, ensure_ascii=False, indent=2)
 
@@ -117,8 +107,7 @@ if "messages" not in st.session_state:
     ]
     st.session_state.step = "inicio"
     st.session_state.respuestas = {}
-    st.session_state.historial_planificaciones = cargar_historial()
-
+    
 def send_message(role, content):
     st.session_state.messages.append({"role": role, "content": content})
 
@@ -131,8 +120,7 @@ def finalizar_planificacion():
     st.session_state.respuestas.clear()
     st.session_state.messages = [{"role": "system", "content": "Eres PlanIA Edu..."}]
     st.session_state.step = "inicio"
-    guardar_historial(st.session_state.historial_planificaciones)
-
+    
 def limpiar_valor(valor):
     valor = str(valor).strip()
     if valor.lower() in ["créalos tú","créalos tu", "crealos tu", "no sé","no se", "ok", "sí", "si", "no", "", " ", "ninguno"]:
@@ -251,33 +239,6 @@ for msg in st.session_state.messages:
         st.markdown(f'<div class="user chat-message"><strong>👤 Tú:</strong> {msg["content"]}</div>', unsafe_allow_html=True)
 
 # Mostrar historial de planificaciones
-st.sidebar.markdown("### 📚 Historial de Planificaciones")
-if st.session_state.historial_planificaciones:
-    for i, plan in enumerate(st.session_state.historial_planificaciones):
-        datos = plan['datos']
-        fecha = plan['fecha']
-        asignatura = datos.get("asignatura", "Sin asignatura")
-        tema = datos.get("tema", "")
-        docente = datos.get("docente_nombre", "Sin nombre")
-
-        with st.sidebar.expander(f"{fecha} - {asignatura} ({docente})"):
-            st.markdown(f"**Tema:** {tema}")
-            for key, value in datos.items():
-                label = key.replace("_", " ").title()
-                st.markdown(f"**{label}:** {value}")
-
-            col1, col2 = st.columns([3, 1])
-            with col1:
-                if st.button("Ver", key=f"view_{i}"):
-                    st.session_state.respuestas = plan["datos"].copy()
-                    st.session_state.step = "recomendaciones"
-            with col2:
-                if st.button("Eliminar", key=f"delete_{i}"):
-                    st.session_state.historial_planificaciones.pop(i)
-                    guardar_historial(st.session_state.historial_planificaciones)
-                    st.rerun()
-else:
-    st.sidebar.info("No hay planificaciones guardadas.")
 
 # Flujo conversacional
 steps = [
