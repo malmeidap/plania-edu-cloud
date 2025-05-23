@@ -386,12 +386,12 @@ elif step_index == 9:
         st.session_state.respuestas["tipo_clase"] = user_input
         send_message("user", user_input)
         send_message("bot", "¿Cuáles son los objetivos de aprendizaje de esta clase?")
-	st.markdown("✏️ Puedes redactar tus propios objetivos o dejar que el asistente los proponga 	automáticamente.")
-	st.markdown("🧠 Si escribes frases como **'créalos tú'**, **'sugiérelos'**, o incluso lo dejas vacío, 	PlanIA Edu generará objetivos pedagógicos adecuados para tu asignatura.")
-	st.markdown("💡 Ejemplo de objetivo redactado: 'Al finalizar la clase, los estudiantes deberán ser 	capaces de resolver funciones lógicas aplicadas en programación.'")
-
+        st.markdown("✏️ Puedes redactar tus propios objetivos o dejar que el asistente los proponga automáticamente.")
+        st.markdown("🧠 Si escribes frases como **'créalos tú'**, **'sugiérelos'**, o incluso lo dejas vacío, PlanIA Edu generará objetivos pedagógicos adecuados para tu asignatura.")
+        st.markdown("💡 Ejemplo de objetivo redactado: 'Al finalizar la clase, los estudiantes deberán ser capaces de resolver funciones lógicas aplicadas en programación.'")
         st.session_state.step = "objetivos"
         st.rerun()
+
 
 # Paso 10: Objetivos de aprendizaje
 elif step_index == 10:
