@@ -327,7 +327,11 @@ elif step_index == 4:
         st.session_state.respuestas["area_conocimiento"] = user_input
         send_message("user", user_input)
         send_message("bot", "¿Cuál es el nivel académico? (Técnico / Pregrado / Posgrado)")
-        st.session_state.step = "nivel_academico"
+	st.markdown("📘 **Guía:** Selecciona el nivel educativo al que está dirigida esta clase:")
+	st.markdown("- **Técnico**: Programas de formación técnica profesional o tecnológica.")
+	st.markdown("- **Pregrado**: Carreras universitarias como licenciaturas e ingenierías.")
+	st.markdown("- **Posgrado**: Maestrías, especializaciones y doctorados.")
+	st.session_state.step = "nivel_academico"
         st.rerun()
 
 # Paso 5: Nivel académico
@@ -379,8 +383,10 @@ elif step_index == 9:
         st.session_state.respuestas["tipo_clase"] = user_input
         send_message("user", user_input)
         send_message("bot", "¿Cuáles son los objetivos de aprendizaje de esta clase?")
-        st.markdown("👉 Si escribes: 'créalos tú', 'sugiérelos', o lo dejas vacío, el asistente generará automáticamente los objetivos adecuados para tu clase.")
-        st.markdown("Si necesitas ayuda, dime: 'Créame unos objetivos'")
+	st.markdown("✏️ Puedes redactar tus propios objetivos o dejar que el asistente los proponga 	automáticamente.")
+	st.markdown("🧠 Si escribes frases como **'créalos tú'**, **'sugiérelos'**, o incluso lo dejas vacío, 	PlanIA Edu generará objetivos pedagógicos adecuados para tu asignatura.")
+	st.markdown("💡 Ejemplo de objetivo redactado: 'Al finalizar la clase, los estudiantes deberán ser 	capaces de resolver funciones lógicas aplicadas en programación.'")
+
         st.session_state.step = "objetivos"
         st.rerun()
 
