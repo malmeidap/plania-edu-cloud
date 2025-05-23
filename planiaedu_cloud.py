@@ -133,10 +133,14 @@ def send_message(role, content):
     st.session_state.messages.append({"role": role, "content": content})
 
 def finalizar_planificacion():
+    nueva_plan = {
+        "fecha": datetime.now().strftime("%Y-%m-%d %H:%M"),
+        "datos": st.session_state.respuestas.copy()
+    }
+    st.session_state.historial_planificaciones.insert(0, nueva_plan)
     st.session_state.respuestas.clear()
-    st.session_state.messages = [{"role": "system", "content": "Eres PlanIA Edu, un asistente pedagógico para docentes universitarios."}]
+    st.session_state.messages = [{"role": "system", "content": "Eres PlanIA Edu..."}]
     st.session_state.step = "inicio"
-
     
 def limpiar_valor(valor):
     valor = str(valor).strip()
@@ -243,6 +247,10 @@ def generar_pdf(respuestas):
                            styles['Normal']))
 
     # Construir PDF
+    
+    story.append(Spacer(1, 0.3 * inch))
+    story.append(Paragraph("<font size='10'>---<br/>Este documento fue generado automáticamente por la herramienta<br/><strong>📘 PlanIA Edu - Asistente Pedagógico con IA</strong><br/>Desarrollado por Marco Almeida – 2025</font>", styles['Normal']))
+
     doc.build(story)
     pdf = buffer.getvalue()
     buffer.close()
