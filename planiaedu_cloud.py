@@ -288,11 +288,12 @@ elif step_index == 1:
     st.markdown("🎓 ¿Cuál es la asignatura que imparte?")
     user_input = st.text_input("Asignatura")
     if st.button("Siguiente"):
-    st.session_state.respuestas["asignatura"] = user_input
+        st.session_state.respuestas["asignatura"] = user_input
         send_message("user", user_input)
         send_message("bot", "¿Sobre qué tema específico trabajará esta clase?")
         st.session_state.step = "tema"
         st.rerun()
+
 
 # Paso 2: Tema
 elif step_index == 2:
