@@ -137,7 +137,7 @@ def finalizar_planificacion():
         "fecha": datetime.now().strftime("%Y-%m-%d %H:%M"),
         "datos": st.session_state.respuestas.copy()
     }
-    st.session_state.historial_planificaciones.insert(0, nueva_plan)
+  
     st.session_state.respuestas.clear()
     st.session_state.messages = [{"role": "system", "content": "Eres PlanIA Edu..."}]
     st.session_state.step = "inicio"
