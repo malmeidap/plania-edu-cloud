@@ -379,7 +379,7 @@ elif step_index == 9:
         st.session_state.respuestas["tipo_clase"] = user_input
         send_message("user", user_input)
         send_message("bot", "¿Cuáles son los objetivos de aprendizaje de esta clase?")
-        st.markdown("💡 Ejemplo: Al finalizar, los estudiantes deberán ser capaces de...")
+        st.markdown("👉 Si escribes: 'créalos tú', 'sugiérelos', o lo dejas vacío, el asistente generará automáticamente los objetivos adecuados para tu clase.")
         st.markdown("Si necesitas ayuda, dime: 'Créame unos objetivos'")
         st.session_state.step = "objetivos"
         st.rerun()
@@ -431,7 +431,8 @@ elif step_index == 11:
 
 # Paso 12: Herramientas
 elif step_index == 12:
-    send_message("bot", "¿Te gustaría que te proponga actividades didácticas específicas?")
+    send_message("bot", "¿Deseas que el asistente proponga actividades didácticas basadas en IA?")
+    st.markdown("💡 Escribe **sí** si deseas que las genere automáticamente, o **no** si prefieres escribirlas tú mismo.")
     user_input = st.text_input("¿Deseas actividades?")
     if st.button("Siguiente"):
         send_message("user", user_input)
@@ -460,7 +461,8 @@ elif step_index == 12:
 
 # Paso 13: Actividades
 elif step_index == 13:
-    send_message("bot", "¿Necesitas guías o tutoriales sobre buenas prácticas éticas al usar IA?")
+    send_message("bot", "📘 Las buenas prácticas éticas al usar IA ayudan a garantizar una educación responsable.")
+    st.markdown("¿Deseas que el asistente te sugiera algunas recomendaciones éticas para esta clase?")
     user_input = st.text_input("¿Deseas recomendaciones éticas?")
     if st.button("Finalizar"):
         send_message("user", user_input)
