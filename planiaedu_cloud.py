@@ -137,7 +137,7 @@ def finalizar_planificacion():
         "fecha": datetime.now().strftime("%Y-%m-%d %H:%M"),
         "datos": st.session_state.respuestas.copy()
     }
-  
+    st.session_state.historial_planificaciones.insert(0, nueva_plan)
     st.session_state.respuestas.clear()
     st.session_state.messages = [{"role": "system", "content": "Eres PlanIA Edu..."}]
     st.session_state.step = "inicio"
@@ -494,6 +494,9 @@ elif step_index == 14:
 
     pdf_content = generar_pdf(st.session_state.respuestas)
 
+    st.markdown("💾 **Antes de continuar, asegúrate de descargar tu planificación en PDF.**")
+    st.markdown("_Este documento no se guarda automáticamente. Si deseas iniciar otra planificación, puedes hacerlo después de descargar._")
+
     col1, col2 = st.columns([3, 1])
     with col1:
         st.download_button(
@@ -503,6 +506,6 @@ elif step_index == 14:
             mime="application/pdf"
         )
     with col2:
-        if st.button("Guardar y nueva planificación"):
+        if st.button("🆕 Generar nueva planificación"):
             finalizar_planificacion()
             st.rerun()
