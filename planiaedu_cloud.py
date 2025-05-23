@@ -97,7 +97,6 @@ if "introduccion_completa" not in st.session_state:
 # API Key – En producción usa variables de entorno
 
 
-    with open(HISTORIAL_PATH, "w", encoding="utf-8") as f:
         json.dump(historial, f, ensure_ascii=False, indent=2)
 
 # Estado de sesión
