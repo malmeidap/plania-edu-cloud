@@ -97,7 +97,6 @@ if "introduccion_completa" not in st.session_state:
 # API Key – En producción usa variables de entorno
 
 
-        json.dump(historial, f, ensure_ascii=False, indent=2)
 
 # Estado de sesión
 if "messages" not in st.session_state:
