@@ -342,7 +342,7 @@ elif step_index == 4:
 
 # Paso 5: Nivel académico
 elif step_index == 5:
-    st.markdown("💡 Indicación: Selecciona el nivel académico que corresponde con la planificación de tu clase.")
+    st.markdown("💡 Selecciona el nivel académico que corresponde con la planificación de tu clase.")
     user_input = st.selectbox("Nivel académico", ["Técnico", "Pregrado", "Grado", "Posgrado"])
     if st.button("Siguiente"):
         st.session_state.respuestas["nivel_academico"] = user_input
