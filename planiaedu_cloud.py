@@ -391,6 +391,8 @@ elif step_index == 8:
 
 # Paso 9: Tipo de clase
 elif step_index == 9:
+    st.markdown("🏫 Selecciona la modalidad que corresponde al entorno en que impartes tu clase.")
+    st.markdown("📚 Presencial: en aula física | Virtual: completamente en línea | Híbrida: combina presencial y virtual | Semipresencial: mayoría presencial, algunas sesiones virtuales | A distancia: sincrónica o asincrónica, sin presencia física")
     user_input = st.selectbox("Tipo de clase", [
         "Presencial", "Virtual", "Híbrida", "Semipresencial", "A distancia"
     ])
