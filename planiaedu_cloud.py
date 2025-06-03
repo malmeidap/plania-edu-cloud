@@ -322,6 +322,7 @@ elif step_index == 3:
 
 # Paso 4: Área de conocimiento
 elif step_index == 4:
+    st.markdown("🎓 Selecciona el nivel académico correspondiente a tus estudiantes.")
     user_input = st.selectbox("Área de conocimiento", [
         "Educación", "Ciencias de la Salud", "Ingeniería y Tecnología",
         "Ciencias Sociales", "Artes y Humanidades", "Otro"
