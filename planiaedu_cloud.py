@@ -353,6 +353,10 @@ elif step_index == 5:
 
 # Paso 6: Tipo de materia
 elif step_index == 6:
+    st.markdown("📘 Selecciona si tu clase es de tipo teórico, práctico o una combinación de ambos.")
+    st.markdown("🔎 **Teórica**: Clases centradas en el desarrollo conceptual, fundamentación académica y exposición de contenidos.")
+    st.markdown("🔬 **Práctica**: Clases orientadas a la aplicación directa, ejercicios, laboratorios o simulaciones.")
+    st.markdown("⚖️ **Mixta**: Combina exposición teórica con actividades prácticas complementarias.")
     user_input = st.selectbox("Tipo de materia", ["Teórica", "Práctica", "Mixta"])
     if st.button("Siguiente"):
         st.session_state.respuestas["tipo_materia"] = user_input
