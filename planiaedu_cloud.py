@@ -409,12 +409,15 @@ elif step_index == 9:
 
 # Paso 10: Objetivos de aprendizaje
 elif step_index == 10:
+    st.markdown("🎯 Escribe tus objetivos o deja que el asistente los genere automáticamente.")
+    st.markdown("📌 Si escribes frases como 'créalos tú', 'sugiérelos' o dejas el campo vacío, se generarán sugerencias.")
+    st.markdown("💡 Ejemplo: 'Al finalizar la clase, los estudiantes deberán ser capaces de analizar textos científicos en inglés técnico.'")
     user_input = st.text_input("Objetivos de aprendizaje")
     if st.button("Siguiente"):
         asignatura = st.session_state.respuestas.get("asignatura", "")
         tema = st.session_state.respuestas.get("tema", "")
 
-        if user_input.strip().lower() in ["créalos tú","créalos tu", "crealos tu", "no sé","no se", "ok", "sí", "si", "no", "", " ", "ninguno"]:
+        if user_input.strip().lower() in ["créalos tú","sugiérelos", "créalos tu", "crealos tu", "crealos tú", "no sé","no se", "ok", "sí", "si", "no", "", " ", "ninguno"]:
             prompt = f"Sugiere 3 objetivos claros para una clase de '{asignatura}' sobre '{tema}', nivel universitario."
             try:
                 obj_ia = openai.chat.completions.create(model="gpt-3.5-turbo", messages=[{"role": "user", "content": prompt}])
