@@ -460,7 +460,8 @@ elif step_index == 11:
 # Paso 12: Herramientas
 elif step_index == 12:
     send_message("bot", "¿Deseas que el asistente proponga actividades didácticas basadas en IA?")
-    st.markdown("💡 Escribe **sí** si deseas que las genere automáticamente, o **no** si prefieres escribirlas tú mismo.")
+    st.markdown("🛠️ Decide si deseas que el asistente proponga actividades didácticas personalizadas usando IA.")
+    st.markdown("✅ Escribe **sí** si deseas sugerencias automáticas, o **no** si prefieres proponerlas tú mismo.")
     user_input = st.text_input("¿Deseas actividades?")
     if st.button("Siguiente"):
         send_message("user", user_input)
