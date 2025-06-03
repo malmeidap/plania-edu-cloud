@@ -367,6 +367,8 @@ elif step_index == 6:
 
 # Paso 7: Experiencia docente
 elif step_index == 7:
+    st.markdown("🧑‍🏫 Selecciona el nivel que más se ajuste a tu trayectoria como docente.")
+    st.markdown("🧾 Principiante: <1 año | Intermedio: 1-10 años | Avanzado: >10 años")
     user_input = st.selectbox("Nivel de experiencia docente", ["Principiante", "Intermedio", "Avanzado"])
     if st.button("Siguiente"):
         st.session_state.respuestas["experiencia_docente"] = user_input
