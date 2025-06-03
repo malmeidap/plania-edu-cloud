@@ -309,6 +309,8 @@ elif step_index == 2:
 
 # Paso 3: Duración de la clase
 elif step_index == 3:
+    st.markdown("🕒 ¿Cuánto tiempo durará la clase?")
+    st.markdown("💡 Ejemplo: 45 minutos, 1 hora, 90 minutos...")
     user_input = st.text_input("Duración de la clase")
     if st.button("Siguiente"):
         st.session_state.respuestas["duracion_clase"] = user_input
