@@ -491,7 +491,9 @@ elif step_index == 12:
 # Paso 13: Actividades
 elif step_index == 13:
     send_message("bot", "📘 Las buenas prácticas éticas al usar IA ayudan a garantizar una educación responsable.")
-    st.markdown("¿Deseas que el asistente te sugiera algunas recomendaciones éticas para esta clase?")
+    st.markdown("📘 Las buenas prácticas éticas al usar IA ayudan a garantizar una educación responsable.")
+    st.markdown("🧭 Elige si deseas recibir sugerencias éticas para aplicar la inteligencia artificial en tu clase.")
+    st.markdown("✅ Escribe **sí** para recibirlas automáticamente, o **no** si prefieres omitirlas.")
     user_input = st.text_input("¿Deseas recomendaciones éticas?")
     if st.button("Finalizar"):
         send_message("user", user_input)
