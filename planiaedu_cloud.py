@@ -285,7 +285,7 @@ if step_index == 0:
 
 # Paso 1: Asignatura
 elif step_index == 1:
-    st.markdown("🎓 ¿Cuál es la asignatura que imparte?")
+    st.markdown("🎓 ¿Cuál es la asignatura que impartes?")
     user_input = st.text_input("Asignatura")
     if st.button("Siguiente"):
         st.session_state.respuestas["asignatura"] = user_input
@@ -310,7 +310,7 @@ elif step_index == 2:
 # Paso 3: Duración de la clase
 elif step_index == 3:
     st.markdown("🕒 ¿Cuánto tiempo durará la clase?")
-    st.markdown("💡 Ejemplo: 45 minutos, 1 hora, 90 minutos...")
+    st.markdown("💡 Ejemplo: 45 minutos, 90 minutos, 2 horas, ...")
     user_input = st.text_input("Duración de la clase")
     if st.button("Siguiente"):
         st.session_state.respuestas["duracion_clase"] = user_input
@@ -379,7 +379,7 @@ elif step_index == 7:
 
 # Paso 8: Frecuencia de uso de tecnologías educativas
 elif step_index == 8:
-    st.markdown("💡 Indicación: Señala con qué frecuencia utilizas herramientas digitales o plataformas educativas.")
+    st.markdown("💡 Señala con qué frecuencia utilizas herramientas digitales o plataformas educativas.")
     st.markdown("📶 Bajo: uso ocasional | Medio: uso regular | Alto: uso intensivo o cotidiano")
     user_input = st.selectbox("Frecuencia de uso de tecnologías educativas", ["Bajo", "Medio", "Alto"])
     if st.button("Siguiente"):
@@ -392,7 +392,7 @@ elif step_index == 8:
 # Paso 9: Tipo de clase
 elif step_index == 9:
     st.markdown("🏫 Selecciona la modalidad que corresponde al entorno en que impartes tu clase.")
-    st.markdown("📚 Presencial: en aula física | Virtual: completamente en línea | Híbrida: combina presencial y virtual | Semipresencial: mayoría presencial, algunas sesiones virtuales | A distancia: sincrónica o asincrónica, sin presencia física")
+    st.markdown("📚 Presencial: En aula física | Virtual: Completamente en línea | Híbrida: Combina presencial y virtual | Semipresencial: Mayormente presencial, algunas sesiones virtuales | A distancia: Sincrónica o asincrónica, sin presencia física")
     user_input = st.selectbox("Tipo de clase", [
         "Presencial", "Virtual", "Híbrida", "Semipresencial", "A distancia"
     ])
