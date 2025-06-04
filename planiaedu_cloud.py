@@ -434,7 +434,7 @@ elif step_index == 10:
 # Paso 11: Nivel de conocimientos tecnológicos
 elif step_index == 11:
     st.markdown("💻 Selecciona tu nivel de dominio de tecnologías digitales aplicadas a la docencia.")
-    st.markdown("🔍 Bajo: conocimientos básicos | Medio: uso habitual de plataformas | Alto: dominio de herramientas avanzadas")
+    st.markdown("🔍 Bajo: Conocimientos básicos | Medio: Uso habitual de plataformas | Alto: Dominio de herramientas avanzadas")
     user_input = st.selectbox("Nivel de conocimientos tecnológicos", ["Bajo", "Medio", "Alto"])
     if st.button("Siguiente"):
         st.session_state.respuestas["nivel_tecnologico"] = user_input
