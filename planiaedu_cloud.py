@@ -380,7 +380,7 @@ elif step_index == 7:
 # Paso 8: Frecuencia de uso de tecnologías educativas
 elif step_index == 8:
     st.markdown("💡 Señala con qué frecuencia utilizas herramientas digitales o plataformas educativas.")
-    st.markdown("📶 Bajo: uso ocasional | Medio: uso regular | Alto: uso intensivo o cotidiano")
+    st.markdown("📶 Bajo: Uso ocasional | Medio: Uso regular | Alto: Uso intensivo o cotidiano")
     user_input = st.selectbox("Frecuencia de uso de tecnologías educativas", ["Bajo", "Medio", "Alto"])
     if st.button("Siguiente"):
         st.session_state.respuestas["frecuencia_tecno"] = user_input
