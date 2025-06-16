@@ -1,16 +1,16 @@
 
 # PlanIA EDU 🎓🤖
 
-**PlanIA EDU** es un asistente inteligente desarrollado con [Streamlit](https://streamlit.io) que permite a los docentes de la Facultad de Ciencias de la Salud de la Universidad Católica de Santiago de Guayaquil (UCSG) generar planificaciones pedagógicas automatizadas mediante herramientas de inteligencia artificial. Este sistema fue diseñado y validado en el marco de mi trabajo de titulación de maestría en Tecnología e Innovación Educativa, con el propósito de fortalecer la planificación docente universitaria a través de soluciones tecnológicas contextualizadas.
+**PlanIA EDU** es un asistente inteligente desarrollado con [Streamlit](https://streamlit.io) que permite a los docentes generar planificaciones pedagógicas automatizadas mediante herramientas de inteligencia artificial. Aunque fue diseñado y validado en el marco de mi trabajo de titulación de maestría en Tecnología e Innovación Educativa, con énfasis en la Facultad de Ciencias de la Salud de la Universidad Católica de Santiago de Guayaquil (UCSG), el sistema puede ser utilizado por docentes de cualquier nivel educativo y en diversas instituciones académicas que deseen fortalecer su planificación mediante soluciones tecnológicas basadas en IA.
 
 ---
 
 ## 🧠 ¿Qué hace PlanIA EDU?
 
-- Genera planificaciones pedagógicas interactivas basadas en IA, adaptadas al contexto de la educación superior en salud.
+- Genera planificaciones pedagógicas interactivas basadas en IA, adaptadas al contexto de la educación superior en salud, pero aplicables a cualquier nivel educativo.
 - Guarda un historial organizado en formato `.json`.
 - Exporta planificaciones en formato PDF.
-- Ofrece una interfaz intuitiva y amigable, diseñada específicamente para docentes universitarios de la UCSG.
+- Ofrece una interfaz intuitiva y amigable, diseñada para facilitar el trabajo docente en cualquier institución.
 
 ---
 
@@ -67,4 +67,4 @@ Este proyecto está licenciado bajo la [MIT License](LICENSE). El desarrollo for
 
 ## 🤝 Autor
 
-Desarrollado por **Ing. Marco Enrique Almeida Pacheco**, como parte de mi trabajo de titulación para optar al grado de Magíster en Tecnología e Innovación Educativa en la Universidad de Guayaquil. Este proyecto está orientado al fortalecimiento de la planificación pedagógica de los docentes de la Facultad de Ciencias de la Salud de la UCSG mediante inteligencia artificial.
+Desarrollado por **Ing. Marco Enrique Almeida Pacheco**, como parte de mi trabajo de titulación para optar al grado de Magíster en Tecnología e Innovación Educativa en la Universidad de Guayaquil. Este proyecto está orientado al fortalecimiento de la planificación pedagógica de los docentes de la Facultad de Ciencias de la Salud de la UCSG mediante inteligencia artificial, con posibilidad de uso en distintos niveles e instituciones educativas.
