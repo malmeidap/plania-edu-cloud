@@ -60,9 +60,13 @@ plania-edu-cloud/
 
 ---
 
-## 📄 Licencia
+## 📄 Licencia y derechos de uso
 
-Este proyecto está licenciado bajo la [MIT License](LICENSE). Puedes usarlo, modificarlo y distribuirlo libremente, dando crédito al autor.
+Este software ha sido desarrollado por el Ing. Marco Enrique Almeida Pacheco como parte de su proyecto de titulación de la Maestría en Tecnología e Innovación Educativa – Universidad de Guayaquil, con aplicación inicial en la Facultad de Ciencias de la Salud – UCSG.
+
+Está licenciado bajo los términos de la [Licencia MIT](LICENSE), lo que permite su uso, modificación, distribución y comercialización, siempre que se mantenga la atribución correspondiente al autor original.
+
+📌 Para licencias comerciales, soporte personalizado o implementación institucional, puede escribir a: **almeidam32@gmail.com**
 
 ---
 
