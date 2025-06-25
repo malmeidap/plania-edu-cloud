@@ -1,3 +1,10 @@
+# ==============================================================================
+# PlanIA Edu – Asistente Pedagógico con Inteligencia Artificial
+# Desarrollado por: Ing. Marco Enrique Almeida Pacheco
+# Proyecto de titulación de la Maestría en Tecnología e Innovación Educativa
+# Universidad de Guayaquil – Facultad de Filosofía
+# Fecha de entrega: Junio 2025
+# ==============================================================================
 # 🔹 Librerías estándar de Python
 import os
 import io
@@ -23,7 +30,15 @@ if not openai.api_key or not openai.api_key.startswith("sk-"):
     st.error("🔐 Error: No se ha configurado correctamente la clave de OpenAI. Por favor, revisa la sección de 'Secrets' en Streamlit Cloud.")
     st.stop()
 
-# Función auxiliar para manejar llamadas seguras a OpenAI
+# ----------------------------------------------------------------------
+# Función: consulta_openai(prompt)
+# Descripción: Envía un mensaje (prompt) al modelo GPT-3.5-turbo de OpenAI
+#              y devuelve la respuesta generada por la IA.
+# Parámetros:
+#   - prompt (str): Texto de entrada con la solicitud del usuario.
+# Retorna:
+#   - str: Contenido de la respuesta generada por la IA.
+# ----------------------------------------------------------------------
 def consulta_openai(prompt):
     try:
         respuesta = openai.ChatCompletion.create(
@@ -148,6 +163,16 @@ def limpiar_valor(valor):
         return "No especificado"
     return valor
 
+# ----------------------------------------------------------------------
+# Función: generar_pdf(respuestas)
+# Descripción: Genera un documento PDF con el contenido de una planificación
+#              pedagógica, a partir de las respuestas recopiladas por el sistema.
+#              Utiliza ReportLab para construir la estructura y formato del documento.
+# Parámetros:
+#   - respuestas (dict): Diccionario con los campos completados durante el flujo del asistente.
+# Retorna:
+#   - buffer (BytesIO): Objeto en memoria con el PDF generado listo para descarga.
+# ----------------------------------------------------------------------
 def generar_pdf(respuestas):
     buffer = io.BytesIO()
     doc = SimpleDocTemplate(buffer, pagesize=letter,
