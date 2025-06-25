@@ -283,16 +283,15 @@ if step_index == 0:
     user_input = st.text_input("Tu nombre")
 
     # Pie de firma institucional (dentro del bloque if)
-	st.markdown("---")
-	st.markdown(
-   	 "<div style='text-align: center; font-size: 13px;'>"
-   	 "Desarrollado por <strong>Ing. Marco Almeida Pacheco</strong> (Junio 2025)<br/>"
-   	 "<em>Trabajo de titulación de la Maestría en Tecnología e Innovación Educativa - Universidad de Guayaquil</em><br/>"
-    	"<em>Implementado en la Facultad de Ciencias de la Salud - UCSG</em>"
-    	"</div>",
-    	unsafe_allow_html=True
-     )
-
+    st.markdown("---")
+    st.markdown(
+        "<div style='text-align: center; font-size: 13px;'>"
+        "Desarrollado por <strong>Ing. Marco Almeida Pacheco</strong> (Junio 2025)<br/>"
+        "<em>Trabajo de titulación de la Maestría en Tecnología e Innovación Educativa - Universidad de Guayaquil</em><br/>"
+        "<em>Implementado en la Facultad de Ciencias de la Salud - UCSG</em>"
+        "</div>",
+        unsafe_allow_html=True
+    )
 
     if st.button("Comenzar"):
         st.session_state.respuestas["docente_nombre"] = user_input
