@@ -1,6 +1,6 @@
 # PlanIA EDU 🎓🤖
 
-**PlanIA EDU** es un asistente inteligente desarrollado por el **Ing. Marco Enrique Almeida Pacheco** con [Streamlit](https://streamlit.io). La aplicación permite a los docentes generar planificaciones pedagógicas automatizadas mediante inteligencia artificial, de forma rápida, ordenada y personalizada.
+**PlanIA EDU** es un asistente inteligente desarrollado por el **Ing. Marco Almeida Pacheco** con [Streamlit](https://streamlit.io). La aplicación permite a los docentes generar planificaciones pedagógicas automatizadas mediante inteligencia artificial, de forma rápida, ordenada y personalizada.
 
 Este sistema fue creado como parte del trabajo de titulación de la Maestría en Tecnología e Innovación Educativa en la Universidad de Guayaquil, con aplicación inicial en la Facultad de Ciencias de la Salud de la Universidad Católica de Santiago de Guayaquil (UCSG), aunque es adaptable a cualquier institución y nivel educativo.
 
