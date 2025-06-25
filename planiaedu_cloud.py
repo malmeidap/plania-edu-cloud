@@ -1,5 +1,22 @@
+# 🔹 Librerías estándar de Python
+import os
+import io
+import json
+import time
+from datetime import datetime
+from re import findall
+
+# 🔸 Librerías externas
 import streamlit as st
 import openai
+from PIL import Image
+from reportlab.pdfgen import canvas
+from reportlab.lib.pagesizes import letter
+from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle
+from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
+from reportlab.lib.units import inch
+from reportlab.platypus import Image as ReportLabImage
+
 openai.api_key = st.secrets["OPENAI_API_KEY"]
 # Verificación temprana de API Key
 if not openai.api_key or not openai.api_key.startswith("sk-"):
@@ -24,18 +41,6 @@ def consulta_openai(prompt):
         return f"⚠️ Error al conectar con OpenAI: {str(e)}"
     except Exception as e:
         return f"⚠️ Error inesperado: {str(e)}"
-from datetime import datetime
-from reportlab.pdfgen import canvas
-from reportlab.lib.pagesizes import letter
-from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle
-from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
-from reportlab.lib.units import inch
-from reportlab.platypus import Image as ReportLabImage
-from PIL import Image
-import io
-import os
-import json
-import time
 
 # Configuración inicial
 st.set_page_config(page_title="PlanIA Edu - Asistente Pedagógico", layout="centered")
