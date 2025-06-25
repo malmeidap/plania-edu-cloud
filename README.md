@@ -72,4 +72,4 @@ Está licenciado bajo los términos de la [Licencia MIT](LICENSE), lo que permit
 
 ## 🤝 Autor
 
-Desarrollado por **Ing. Marco Enrique Almeida Pacheco**. Este proyecto está orientado al fortalecimiento de la planificación pedagógica de los docentes de la Facultad de Ciencias de la Salud de la UCSG mediante inteligencia artificial, con posibilidad de uso en distintos niveles e instituciones educativas.
+Desarrollado por **Ing. Marco Almeida Pacheco**. Este proyecto está orientado al fortalecimiento de la planificación pedagógica de los docentes de la Facultad de Ciencias de la Salud de la UCSG mediante inteligencia artificial, con posibilidad de uso en distintos niveles e instituciones educativas.
