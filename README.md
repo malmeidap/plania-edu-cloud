@@ -62,10 +62,10 @@ plania-edu-cloud/
 
 ## 📄 Licencia
 
-Este proyecto está licenciado bajo la [MIT License](LICENSE). El desarrollo forma parte de mi trabajo de titulación de la Maestría en Tecnología e Innovación Educativa de la Universidad de Guayaquil.
+Este proyecto está licenciado bajo la [MIT License](LICENSE). Puedes usarlo, modificarlo y distribuirlo libremente, dando crédito al autor.
 
 ---
 
 ## 🤝 Autor
 
-Desarrollado por **Ing. Marco Enrique Almeida Pacheco**, como parte de mi trabajo de titulación para optar al grado de Magíster en Tecnología e Innovación Educativa en la Universidad de Guayaquil. Este proyecto está orientado al fortalecimiento de la planificación pedagógica de los docentes de la Facultad de Ciencias de la Salud de la UCSG mediante inteligencia artificial, con posibilidad de uso en distintos niveles e instituciones educativas.
+Desarrollado por **Ing. Marco Enrique Almeida Pacheco**. Este proyecto está orientado al fortalecimiento de la planificación pedagógica de los docentes de la Facultad de Ciencias de la Salud de la UCSG mediante inteligencia artificial, con posibilidad de uso en distintos niveles e instituciones educativas.
