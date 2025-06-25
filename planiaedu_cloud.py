@@ -276,6 +276,16 @@ if step_index == 0:
     st.markdown("Voy a ayudarte a planificar tus clases universitarias con inteligencia artificial.")
     st.markdown("¿Cómo te llamas?")
     user_input = st.text_input("Tu nombre")
+
+    # Pie de firma institucional (dentro del bloque if)
+    st.markdown("---")
+    st.markdown(
+        "<div style='text-align: center; font-size: 13px;'>"
+        "Desarrollado por <strong>Ing. Marco Almeida Pacheco</strong> (Junio 2025)"
+        "</div>",
+        unsafe_allow_html=True
+    )
+
     if st.button("Comenzar"):
         st.session_state.respuestas["docente_nombre"] = user_input
         send_message("bot", f"¡Bienvenido/a, {user_input}! 🎓")
