@@ -140,7 +140,7 @@ if "introduccion_completa" not in st.session_state:
 # API Key – En producción usa variables de entorno
 
 
-
+# Inicializa el estado de la sesión en Streamlit si es la primera vez que se carga la app
 # Estado de sesión
 if "messages" not in st.session_state:
     st.session_state.messages = [
@@ -149,9 +149,21 @@ if "messages" not in st.session_state:
     st.session_state.step = "inicio"
     st.session_state.respuestas = {}
     
+# ----------------------------------------------------------------------
+# Función: send_message(role, content)
+# Descripción: Agrega un mensaje al historial de conversación de la sesión.
+# Parámetros:
+#   - role (str): Rol del emisor del mensaje ('user' o 'bot').
+#   - content (str): Contenido textual del mensaje.
+# ----------------------------------------------------------------------
 def send_message(role, content):
     st.session_state.messages.append({"role": role, "content": content})
 
+# ----------------------------------------------------------------------
+# Función: finalizar_planificacion()
+# Descripción: Cierra el flujo del asistente mostrando un mensaje de éxito
+#              y activa la opción para descargar la planificación en PDF.
+# ----------------------------------------------------------------------
 def finalizar_planificacion():
     st.session_state.respuestas.clear()
     st.session_state.messages = [{"role": "system", "content": "Eres PlanIA Edu, un asistente pedagógico para docentes universitarios."}]
@@ -300,7 +312,8 @@ steps = [
 
 step_index = steps.index(st.session_state.step) if st.session_state.step in steps else 0
 
-# Paso 0: Saludo e identificación del docente
+# Paso 0: Bienvenida e identificación del docente
+# Muestra mensaje inicial, solicita el nombre y configura el siguiente paso tras hacer clic en "Comenzar"
 if step_index == 0:
     st.markdown("👋 ¡Hola! Soy **PlanIA Edu**, tu asistente pedagógico.")
     st.markdown("Voy a ayudarte a planificar tus clases universitarias con inteligencia artificial.")
@@ -325,7 +338,8 @@ if step_index == 0:
         st.session_state.step = "asignatura"
         st.rerun()
 
-# Paso 1: Asignatura
+# Paso 1: Solicita el nombre de la asignatura que imparte el docente
+# Luego avanza al siguiente paso para conocer el objetivo de aprendizaje
 elif step_index == 1:
     st.markdown("🎓 ¿Cuál es la asignatura que impartes?")
     user_input = st.text_input("Asignatura")
@@ -336,7 +350,8 @@ elif step_index == 1:
         st.session_state.step = "tema"
         st.rerun()
 
-# Paso 2: Tema
+# Paso 2: Solicita el objetivo de aprendizaje de la clase
+# Esta información será utilizada por la IA para contextualizar la planificación
 elif step_index == 2:
     st.markdown("📘 ¿Cuál es el tema central de tu clase?")
     st.markdown("💡 Ejemplo: Ecuaciones cuadráticas, Células eucariotas...")
@@ -348,7 +363,8 @@ elif step_index == 2:
         st.session_state.step = "duracion_clase"
         st.rerun()
 
-# Paso 3: Duración de la clase
+# Paso 3: Solicita los temas o contenidos que se abordarán en la clase
+# Esta información se usará para generar las actividades y materiales pertinentes
 elif step_index == 3:
     st.markdown("🕒 ¿Cuánto tiempo durará la clase?")
     st.markdown("💡 Ejemplo: 45 minutos, 90 minutos, 2 horas, ...")
@@ -361,7 +377,8 @@ elif step_index == 3:
         st.session_state.step = "area_conocimiento"
         st.rerun()
 
-# Paso 4: Área de conocimiento
+# Paso 4: Selección del área de conocimiento
+# Permite contextualizar la planificación según la disciplina académica del docente
 elif step_index == 4:
     st.markdown("🎓 Selecciona el área de conocimiento.")
     user_input = st.selectbox("Área de conocimiento", [
@@ -381,7 +398,8 @@ elif step_index == 4:
 
 
 
-# Paso 5: Nivel académico
+# Paso 5: Selección del nivel académico
+# Define el nivel educativo al que está dirigida la planificación (ej. pregrado, posgrado)
 elif step_index == 5:
     st.markdown("💡 Selecciona el nivel académico que corresponde con la planificación de tu clase.")
     user_input = st.selectbox("Nivel académico", ["Técnico", "Pregrado", "Grado", "Posgrado"])
@@ -392,7 +410,8 @@ elif step_index == 5:
         st.session_state.step = "tipo_materia"
         st.rerun()
 
-# Paso 6: Tipo de materia
+# Paso 6: Tipo de materia (teórica, práctica o mixta)
+# Permite adaptar la planificación según la naturaleza del enfoque pedagógico de la clase
 elif step_index == 6:
     st.markdown("📘 Selecciona si tu clase es de tipo teórico, práctico o una combinación de ambos.")
     st.markdown("🔎 **Teórica**: Clases centradas en el desarrollo conceptual, fundamentación académica y exposición de contenidos.")
@@ -406,7 +425,8 @@ elif step_index == 6:
         st.session_state.step = "experiencia_docente"
         st.rerun()
 
-# Paso 7: Experiencia docente
+# Paso 7: Nivel de experiencia docente
+# Recoge la trayectoria profesional del usuario como docente para ajustar el enfoque de la planificación
 elif step_index == 7:
     st.markdown("🧑‍🏫 Selecciona el nivel que más se ajuste a tu trayectoria como docente.")
     st.markdown("🧾 Principiante: <1 año | Intermedio: 1-10 años | Avanzado: >10 años")
@@ -419,6 +439,7 @@ elif step_index == 7:
         st.rerun()
 
 # Paso 8: Frecuencia de uso de tecnologías educativas
+# Recoge el nivel de familiaridad del docente con herramientas digitales para adaptar la planificación
 elif step_index == 8:
     st.markdown("💡 Señala con qué frecuencia utilizas herramientas digitales o plataformas educativas.")
     st.markdown("📶 Bajo: Uso ocasional | Medio: Uso regular | Alto: Uso intensivo o cotidiano")
@@ -431,6 +452,7 @@ elif step_index == 8:
         st.rerun()
 
 # Paso 9: Tipo de clase
+# Permite identificar la modalidad de enseñanza (presencial, virtual, híbrida, etc.) para contextualizar la planificación
 elif step_index == 9:
     st.markdown("🏫 Selecciona la modalidad que corresponde al entorno en que impartes tu clase.")
     st.markdown("📚 Presencial: En aula física | Virtual: Completamente en línea | Híbrida: Combina presencial y virtual | Semipresencial: Mayormente presencial, algunas sesiones virtuales | A distancia: Sincrónica o asincrónica, sin presencia física")
@@ -449,6 +471,8 @@ elif step_index == 9:
 
 
 # Paso 10: Objetivos de aprendizaje
+# El docente puede ingresar sus objetivos o solicitar que la IA los genere automáticamente según la asignatura y el tema.
+# Se procesan expresiones comunes que indican delegación al asistente (ej. "sugiérelos", "créalos tú", etc.).
 elif step_index == 10:
     st.markdown("🎯 Escribe tus objetivos o deja que el asistente los genere automáticamente.")
     st.markdown("📌 Si escribes frases como 'créalos tú', 'sugiérelos' o dejas el campo vacío, se generarán sugerencias.")
@@ -473,6 +497,8 @@ elif step_index == 10:
         st.rerun()
 
 # Paso 11: Nivel de conocimientos tecnológicos
+# Permite evaluar el dominio del docente sobre tecnologías digitales aplicadas a la enseñanza.
+# A partir de esta información, la IA sugiere 3 herramientas educativas adecuadas al contexto del usuario.
 elif step_index == 11:
     st.markdown("💻 Selecciona tu nivel de dominio de tecnologías digitales aplicadas a la docencia.")
     st.markdown("🔍 Bajo: Conocimientos básicos | Medio: Uso habitual de plataformas | Alto: Dominio de herramientas avanzadas")
@@ -498,7 +524,9 @@ elif step_index == 11:
         st.session_state.step = "herramientas"
         st.rerun()
 
-# Paso 12: Herramientas
+# Paso 12: Generación de actividades didácticas con IA
+# El docente decide si desea recibir sugerencias automáticas. Si responde "sí", la IA propone actividades
+# estructuradas por bloques de tiempo usando las herramientas tecnológicas disponibles y los objetivos definidos.
 elif step_index == 12:
     send_message("bot", "¿Deseas que el asistente proponga actividades didácticas basadas en IA?")
     st.markdown("🛠️ Decide si deseas que el asistente proponga actividades didácticas personalizadas usando IA.")
@@ -529,7 +557,9 @@ elif step_index == 12:
         st.session_state.step = "actividades"
         st.rerun()
 
-# Paso 13: Actividades
+# Paso 13: Recomendaciones éticas sobre el uso de IA
+# El docente decide si desea recibir sugerencias de buenas prácticas éticas. Si responde "sí", la IA
+# proporciona 3 recomendaciones para aplicar la inteligencia artificial de manera responsable en el aula.
 elif step_index == 13:
     send_message("bot", "📘 Las buenas prácticas éticas al usar IA ayudan a garantizar una educación responsable.")
     st.markdown("📘 Las buenas prácticas éticas al usar IA ayudan a garantizar una educación responsable.")
@@ -550,7 +580,9 @@ elif step_index == 13:
         st.session_state.step = "recomendaciones"
         st.rerun()
 
-# Paso 14: Recomendaciones finales
+# Paso 14: Recomendaciones finales y descarga del PDF
+# Muestra el resumen completo de la planificación generada, permite descargar el documento en PDF
+# y ofrece la opción de iniciar una nueva planificación docente.
 elif step_index == 14:
     st.success("✅ ¡Tu planificación está lista!")
     st.subheader("Resumen Final:")
@@ -578,3 +610,4 @@ elif step_index == 14:
         if st.button("🆕 Generar nueva planificación"):
             finalizar_planificacion()
             st.rerun()
+# Desarrollado por Ing. Marco Enrique Almeida Pacheco – Junio 2025
