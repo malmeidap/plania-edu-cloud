@@ -282,6 +282,14 @@ if step_index == 0:
         send_message("bot", "¿Cuál es la asignatura que imparte?")
         st.session_state.step = "asignatura"
         st.rerun()
+# Pie de firma institucional
+st.markdown("---")
+st.markdown(
+    "<div style='text-align: center; font-size: 13px;'>"
+    "Desarrollado por <strong>Ing. Marco Almeida Pacheco</strong> (Junio 2025)"
+    "</div>",
+    unsafe_allow_html=True
+)
 
 # Paso 1: Asignatura
 elif step_index == 1:
@@ -293,7 +301,6 @@ elif step_index == 1:
         send_message("bot", "¿Sobre qué tema específico trabajará esta clase?")
         st.session_state.step = "tema"
         st.rerun()
-
 
 # Paso 2: Tema
 elif step_index == 2:
